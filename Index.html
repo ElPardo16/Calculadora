@@ -4,33 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/index.css">
-    <script src="./src/index.js"></script>
     <title>Calculadora</title>
 </head>
 <body>
-    <div class="display">fdgf</div>
+    <div id="display" class="display">0</div>
     <div class="theme">
-
+        <input type="checkbox" name="" id="theme" onclick="changueMode()">
+        <label for="theme">
+            <span class="material-symbols-outlined">clear_night</span>
+            <span class="material-symbols-outlined">brightness_5</span>
+        </label>
     </div>
-    <a href="" class="btn">7</a>
-    <a href="" class="btn">8</a>
-    <a href="" class="btn">9</a>
-    <a href="" class="btn">*</a>
-    <a href="" class="btn">4</a>
-    <a href="" class="btn">5</a>
-    <a href="" class="btn">6</a>
-    <a href="" class="btn">/</a>
-    <a href="" class="btn">1</a>
-    <a href="" class="btn">2</a>
-    <a href="" class="btn">3</a>
-    <a href="" class="btn">-</a>
-    <a href="" class="btn">00</a>
-    <a href="" class="btn">0</a>
-    <a href="" class="btn">.</a>
-    <a href="" class="btn">+</a>
-    <a href="" class="btn borrar">Borrar</a>
-    <a href="" class="btn c">C</a>
-    <a href="" class="btn equals">=</a> 
+    <a href="#" class="btn" onclick="addText(this)">7</a>
+    <a href="#" class="btn" onclick="addText(this)">8</a>
+    <a href="#" class="btn" onclick="addText(this)">9</a>
+    <a href="#" class="btn" onclick="addText(this)">*</a>
+    <a href="#" class="btn" onclick="addText(this)">4</a>
+    <a href="#" class="btn" onclick="addText(this)">5</a>
+    <a href="#" class="btn" onclick="addText(this)">6</a>
+    <a href="#" class="btn" onclick="addText(this)">/</a>
+    <a href="#" class="btn" onclick="addText(this)">1</a>
+    <a href="#" class="btn" onclick="addText(this)">2</a>
+    <a href="#" class="btn" onclick="addText(this)">3</a>
+    <a href="#" class="btn" onclick="addText(this)">-</a>
+    <a href="#" class="btn" onclick="addText(this)">00</a>
+    <a href="#" class="btn" onclick="addText(this)">0</a>
+    <a href="#" class="btn" onclick="addText(this)">.</a>
+    <a href="#" class="btn" onclick="addText(this)">+</a>
+    <a href="#" class="btn borrar" onclick="borrar()"><span class="material-symbols-outlined">Backspace</span></a>
+    <a href="#" class="btn c" onclick="clean()">C</a>
+    <a href="#" class="btn equals" onclick="equals()">=</a> 
+    <script src="./src/index.js"></script>
 </body>
 </html>
