@@ -2,3 +2,48 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root{
+    --accent: gray;
+    --accentDark: ;
+    --hover: ;
+    --text: black;
+}
+body{
+    height: 100vh;
+    padding: 30px;
+    display: grid;
+    grid: 2fr repeat(4, 1fr) / repeat(4, 1fr) 2fr;
+    place-content: center;
+    gap: 30px;
+}
+.display{
+    grid-column: span 4;
+    grid-row: 1;
+    border: var(--text) solid 3px;
+    padding: 20px 40px;
+    font-size: 5rem;
+    text-align: right;
+    display: grid;
+    place-items: center end;
+}
+.btn{
+    display: block;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+    color: var(--text);
+    font-size: 2rem;
+    background: var(--accent);
+}
+.borrar, .c , .equals{
+    grid-column: 5;
+}
+.borrar{
+    grid-row: 2;
+}
+.c{
+    grid-row: 3;
+}
+.equals{
+    grid-row: 4 / -1;
+}
