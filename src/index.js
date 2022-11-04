@@ -44,34 +44,26 @@ function equals(){
     res = op.reduce((v,i, index) => {
         switch(i){
             case "+":
-                if(v == 0){
-                    return v = suma(parseFloat(op[index-1]),parseFloat(op[index+1]))
-                }else{
-                    return v = suma(parseFloat(v),parseFloat(op[index+1]))
-                }
+                return v = operacion(suma, v, op, index)
             case "*":
-                if(v == 0){
-                        return v = multi(parseFloat(op[index-1]),parseFloat(op[index+1]))
-                    }else{
-                        return v = multi(parseFloat(v),parseFloat(op[index+1]))
-                    }
+                return v = operacion(multi, v, op, index)
             case "/":
-                if(v == 0){
-                        return v = div(parseFloat(op[index-1]),parseFloat(op[index+1]))
-                    }else{
-                        return v = div(parseFloat(v),parseFloat(op[index+1]))
-                    }
+                return v = operacion(div, v, op, index)
             case "-":
-                if(v == 0){
-                        return v = resta(parseFloat(op[index-1]),parseFloat(op[index+1]))
-                    }else{
-                        return v = resta(parseFloat(v),parseFloat(op[index+1]))
-                    }
+                return v = operacion(resta, v, op, index)
             default:
                 return v
         }
     }, 0)
     display.textContent = res
+}
+
+function operacion(callback, acc , op, index){
+    if(acc == 0){
+        return acc = callback(parseFloat(op[index-1]),parseFloat(op[index+1]))
+    }else{
+        return acc = callback(parseFloat(acc),parseFloat(op[index+1]))
+    }
 }
 
 function suma(a,b){
