@@ -25,10 +25,11 @@ body{
     grid-row: 1;
     border: var(--aux) solid 3px;
     padding: 20px 40px;
-    font-size: 5rem;
+    font-size: clamp(5rem, 8vw, 10rem);
     text-align: right;
-    display: grid;
-    place-items: center end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     white-space: nowrap;
     overflow: hidden;
     background: #f4f2f5;
@@ -85,7 +86,7 @@ body{
     display: grid;
     place-items: center;
     color: var(--aux);
-    font-size: 2rem;
+    font-size: clamp(2rem, 3vw, 3rem);
     background: var(--accent);
     border-radius: 5px;
     font-weight: bold;

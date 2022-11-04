@@ -1,12 +1,20 @@
 let display = document.getElementById("display")
 let check = document.getElementById("theme")
+let isOperator = 0;
 
 function addText(text){
-    if(display.textContent == "0"){
-        display.textContent = text.innerText
+    let t = format(text.innerText)
+    if(display.textContent == "0" || display.textContent == "NaN"){
+        if(isOperator > 0){
+            display.textContent = "0"
+            
+        }else{
+            display.textContent = t
+        }
     }
     else{
-        display.textContent += format(text.innerText)
+        display.textContent += t
+    
     }
 }
 
@@ -17,10 +25,16 @@ function format(txt){
         case "-":
         case "/":
         case "*":
+            if(isOperator > 0 && display.textContent != "0"){
+                display.textContent = display.textContent.slice(0, -3)
+            }
+            isOperator++
             txtDef = ` ${txt} `
             break
         default:
+            isOperator = 0;
             txtDef = txt
+            break
     }
     return txtDef
 }
@@ -89,9 +103,11 @@ function borrar(){
             case " / ":
             case " * ":
                 display.textContent = display.textContent.slice(0, -3)
+                isOperator = 0
                 break
             default:
                 display.textContent = display.textContent.slice(0, -1)
+                break
         }
     }else{
         display.textContent = "0"
